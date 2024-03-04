@@ -1,7 +1,11 @@
 ---
 layout: layout.liquid
-title: 11ty Boilerplate
+title: 8-Ball Name Generator
 ---
 
-<h1>Yet Another 11ty <strong>Boilerplate</strong></h1>
-<img alt="pine" src="/images/8-ball.svg" width="50" />
+<h1>Shake to reveal your name...</h1>
+<h2>Hold and release to shake</h2>
+<div x-data="{ names: ['Yes', 'Ben', 'Hayden', 'Trevor', 'Carter', 'Yuli', 'Abbey', 'Julia', 'Madi', 'Taylor', 'Sean'], index: 0}" class="ball">
+    <img alt="8-ball" src="/images/8-ball.svg" x-on:click="index = _.random(1,10)"/>
+    <p class="name" x-text="names[index]"></p>
+</div>
